@@ -49,7 +49,8 @@ class System extends Router{
 	}
 	
 	private function setController(){
-		$this->controller = $this->onRaiz ? $this->exploder[0] : (empty($this->exploder[1]) || is_null($this->exploder[1]) || !isset($this->exploder[1]) ? 'home' : $this->exploder[1]);
+		$this->controller = $this->onRaiz ? $this->exploder[0] : 
+			empty($this->exploder[1]) || is_null($this->exploder[1]) || !isset($this->exploder[1]) ? 'home' : $this->exploder[1];
 	}
 	
 	public function getController(){
@@ -73,9 +74,9 @@ class System extends Router{
 			unset($this->exploder[0], $this->exploder[1], $this->exploder[2]);
 		}
 		
-		if(end($this->explorer) == null){
+		/*if(!end($this->explorer) == null){
 			array_pop($this->exploder);
-		}
+		}*/
 		
 		if(empty($this->exploder)){
 			$this->params = array();

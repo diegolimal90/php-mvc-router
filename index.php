@@ -1,9 +1,11 @@
 <?php
-
+//define diretorio raiz
+define('APP_ROOT', 'framework');
+use lib\System;
 require_once 'helper/Bootstrap.php';
 
-use lib\System;
 
-$System = new System();
 
-$System->run();
+$system = new System();
+
+$system->run();
